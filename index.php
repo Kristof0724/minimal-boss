@@ -11,8 +11,10 @@
 <div class="add-box">
     <input type="text" id="title" placeholder="Új todo">
     <button id="add">Hozzáadás</button>
-
+</div> 
+<br>
+<div class = "list">
  <ul id="todo-list"></ul>
-
+</div>
 </body>
 </html>
