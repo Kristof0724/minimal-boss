@@ -41,7 +41,6 @@ async function loadTodos() {
   const hideDone = hideDoneCheckbox.checked
 
   todos.forEach((todo, index) => {
-
     /* ÚJ: kész feladat elrejtése */
     if (hideDone && Number(todo.completed) === 1) return
 
