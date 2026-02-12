@@ -15,10 +15,14 @@
 </form>
 </div> 
 <br>
-<label>
-    <input type="checkbox" id="hide-done">
-    Kész feladatok elrejtése
+<label class="toggle">
+  <input type="checkbox" id="hide-done">
+  <span class="toggle-slider"></span>
+  <span class="toggle-text">Kész feladatok elrejtése</span>
 </label>
+
+
+
 
 <div class="list">
     <ul id="todo-list"></ul>

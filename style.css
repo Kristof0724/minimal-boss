@@ -42,7 +42,7 @@ body {
     0 10px 25px rgba(0, 0, 0, 0.08),
     0 1px 0 rgba(255, 255, 255, 0.8) inset;
 
-    background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow:
@@ -115,7 +115,7 @@ body {
     0 8px 20px rgba(0, 0, 0, 0.08),
     0 1px 0 rgba(255, 255, 255, 0.8) inset;
 
-    background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow:
@@ -143,4 +143,55 @@ button{
 #todo-list li.selected {
   background-color: rgba(30, 58, 138, 0.15); /* halvány kék háttér */
   border-radius: 6px;
+}
+
+/* ===== MODERN TOGGLE ===== */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Alap checkbox teljes elrejtése */
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Kapcsoló háttér */
+.toggle-slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  transition: background-color 0.25s ease;
+}
+
+/* Mozgó kör */
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Bekapcsolt állapot */
+.toggle input:checked + .toggle-slider {
+  background-color: #4caf50;
+}
+
+.toggle input:checked + .toggle-slider::before {
+  transform: translateX(24px);
 }

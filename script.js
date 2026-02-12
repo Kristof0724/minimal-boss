@@ -109,6 +109,16 @@ async function loadTodos() {
     li.appendChild(text)
     list.appendChild(li)
   })
+
+  // Ha nincs egyetlen látható elem sem
+  if (list.children.length === 0) {
+    const emptyMessage = document.createElement("li")
+    emptyMessage.textContent = "Minden feladat teljesítve!"
+    emptyMessage.style.textAlign = "center"
+    emptyMessage.style.opacity = "0.6"
+    emptyMessage.style.fontStyle = "italic"
+    list.appendChild(emptyMessage)
+  }
 }
 
 /* ÚJ: billentyűzetes 1–10 kijelölés */
